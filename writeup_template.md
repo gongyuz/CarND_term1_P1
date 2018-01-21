@@ -27,13 +27,14 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I apply the canny transform and apply a Gaussian noise kernel. The next step is masking the image with the interest region, within which the lane lines stand. Then I draw the lines and converted the image with Hough lines drawn. The last step is combining the lane lines image with the original image. 
+My pipeline consisted of 5 steps:
+1. I converted the images to grayscale
+2. I apply the canny transform and apply a Gaussian noise kernel. 
+3. The next step is masking the image with the interest region, within which the lane lines stand. 
+4. Then I draw the lines and converted the image with Hough lines drawn. 
+5. The last step is combining the lane lines image with the original image. 
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by conducting an weighted average of all the left and right lane line segments to get a single left and right lane line for each image. Taking left lane averaging as an example: All the line segments with negative slope are taken as left line segments. Since the absolute value of slope of the left lane shouldn't be either very low or very high, the line segments with sharp or slow slopes are dropped when calculating the averages. 
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![Grayscal][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
@@ -48,4 +49,4 @@ Another shortcoming could be ...
 
 A possible improvement would be to ...
 
-Another potential improvement could be to ...
+another potential improvement could be to ...
